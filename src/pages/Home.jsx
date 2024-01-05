@@ -60,7 +60,7 @@ export const Home = () => {
               execution, and unforgettable experiences
             </p>
           </div>
-          <div className="bg-[#262626]">
+          <div className="">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-[30px] lg:mt-[55px] ">
               <div className="py-[30px] px-5">
                 <div className="flex items-center justify-center">
