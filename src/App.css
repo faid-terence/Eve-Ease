@@ -17,7 +17,7 @@ body {
   top: 0;
   left: 0;
   z-index: 99999;
-  background: white;
+  background: #339657;
   box-shadow: 3px 3px -8px 3px #ddd;
 }
 
@@ -38,7 +38,7 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    background: #fff;
+    background: #339657;
     z-index: 200;
     flex-direction: column;
     justify-content: center;
