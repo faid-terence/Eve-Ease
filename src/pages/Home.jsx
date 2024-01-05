@@ -7,6 +7,8 @@ import icon2 from "../assets/icon02.png";
 import icon3 from "../assets/icon03.png";
 import { BsArrowRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import paymentMethods from "../assets/mtn1.png";
+import { About } from "../components/About/About";
 
 export const Home = () => {
   return (
@@ -136,53 +138,53 @@ export const Home = () => {
         </div>
       </section> */}
 
-
       <section>
-      <div className="flex flex-col justify-center items-stretch">
-      <div className="bg-neutral-800 flex w-full flex-col justify-center items-center px-16 py-11 max-md:max-w-full max-md:px-5">
-        <div className="flex w-full max-w-[1305px] flex-col items-stretch mb-10 max-md:max-w-full">
-          <div className="flex justify-between gap-5 items-start max-md:max-w-full max-md:flex-wrap">
-            <div className="text-white text-4xl font-bold grow shrink basis-auto mt-3 max-md:max-w-full">
-              Streamlining the process of event ticketing
-            </div>
-            <div className="text-white text-xl grow shrink basis-auto max-md:max-w-full">
-              At TickNet, we believe that buying tickets for your favourite
-              events should be as seamless as possible. We aim to make it
-              smooth.
-            </div>
-          </div>
-          <div className="flex w-[475px] max-w-full justify-between gap-5 mr-20 mt-3.5 self-end items-start max-md:flex-wrap max-md:mr-2.5">
-            <div className="flex flex-col items-start">
-              <div className="text-white text-xl font-bold ml-3 max-md:ml-2.5">
-                5000
-                <br />
+        <div className="flex flex-col justify-center items-stretch">
+          <div className="bg-neutral-800 flex w-full flex-col justify-center items-center px-16 py-11 max-md:max-w-full max-md:px-5">
+            <div className="flex w-full max-w-[1305px] flex-col items-stretch mb-10 max-md:max-w-full">
+              <div className="flex justify-between gap-5 items-start max-md:max-w-full max-md:flex-wrap">
+                <div className="text-white text-4xl font-bold grow shrink basis-auto mt-3 max-md:max-w-full">
+                  Streamlining the process of event ticketing
+                </div>
+                <div className="text-white text-xl grow shrink basis-auto max-md:max-w-full">
+                  At TickNet, we believe that buying tickets for your favourite
+                  events should be as seamless as possible. We aim to make it
+                  smooth.
+                </div>
               </div>
-              <div className="text-white text-base self-stretch whitespace-nowrap mt-6">
-                Active Users
-              </div>
-            </div>
-            <div className="self-stretch flex flex-col items-center">
-              <div className="text-white text-xl font-bold whitespace-nowrap">
-                2000
-              </div>
-              <div className="text-white text-base self-stretch whitespace-nowrap mt-6">
-                Global Events
-              </div>
-            </div>
-            <div className="self-center flex flex-col items-stretch my-auto">
-              <div className="text-white text-xl font-bold">
-                100000
-                <br />
-              </div>
-              <div className="text-white text-base whitespace-nowrap mt-4">
-                Tickets Sold
+              <div className="flex w-[475px] max-w-full justify-between gap-5 mr-20 mt-3.5 self-end items-start max-md:flex-wrap max-md:mr-2.5">
+                <div className="flex flex-col items-start">
+                  <div className="text-white text-xl font-bold ml-3 max-md:ml-2.5">
+                    5000
+                    <br />
+                  </div>
+                  <div className="text-white text-base self-stretch whitespace-nowrap mt-6">
+                    Active Users
+                  </div>
+                </div>
+                <div className="self-stretch flex flex-col items-center">
+                  <div className="text-white text-xl font-bold whitespace-nowrap">
+                    2000
+                  </div>
+                  <div className="text-white text-base self-stretch whitespace-nowrap mt-6">
+                    Global Events
+                  </div>
+                </div>
+                <div className="self-center flex flex-col items-stretch my-auto">
+                  <div className="text-white text-xl font-bold">
+                    100000
+                    <br />
+                  </div>
+                  <div className="text-white text-base whitespace-nowrap mt-4">
+                    Tickets Sold
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
       </section>
+      <About />
     </>
   );
 };
