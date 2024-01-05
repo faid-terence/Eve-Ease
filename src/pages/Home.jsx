@@ -1,5 +1,7 @@
 import React from "react";
 import eventImage from "../assets/event.png";
+import eventImage2 from "../assets/event2.png";
+import eventImage3 from "../assets/event3.png";
 
 export const Home = () => {
   return (
@@ -30,7 +32,11 @@ export const Home = () => {
 
             <div className="flex gap-[30px] justify-end">
               <div>
-                <img src={eventImage} alt="" />
+                <img src={eventImage} alt="" className=""/>
+              </div>
+              <div className="mt-[30px]">
+                {/* <img src={eventImage2} alt="" className="w-full mb-[30px]" /> */}
+                {/* <img src={eventImage3} alt="" className="w-full" /> */}
               </div>
             </div>
           </div>
