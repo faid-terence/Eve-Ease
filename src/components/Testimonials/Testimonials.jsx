@@ -19,6 +19,9 @@ export const Testimonials = () => {
           direction="horizontal"
           grabCursor={true}
           spaceBetween={50}
+          effect="fade"
+          fadeEffect={{ crossFade: true }}
+          autoplay={{ delay: 1000, disableOnInteraction: false }}
           pagination={{
             el: ".swiper-pagination",
             clickable: true,
@@ -155,9 +158,9 @@ export const Testimonials = () => {
                 </SwiperSlide>
               </div>
             </div>
-            <div className="swiper-pagination js-testimonial-pagination"></div>
           </div>
         </Swiper>
+        <div className="swiper-pagination js-testimonial-pagination"></div>
       </div>
     </section>
   );

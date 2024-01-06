@@ -188,7 +188,7 @@ export const Home = () => {
       </section>
       <About />
       <Services />
-      <Testimonials/>
+      <Testimonials />
     </>
   );
 };
