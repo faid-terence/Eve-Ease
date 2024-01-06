@@ -9,6 +9,7 @@ import { BsArrowRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import paymentMethods from "../assets/mtn1.png";
 import { About } from "../components/About/About";
+import { Services } from "../components/Services/Services";
 
 export const Home = () => {
   return (
@@ -185,6 +186,7 @@ export const Home = () => {
         </div>
       </section>
       <About />
+      <Services />
     </>
   );
 };
