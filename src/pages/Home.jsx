@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import paymentMethods from "../assets/mtn1.png";
 import { About } from "../components/About/About";
 import { Services } from "../components/Services/Services";
+import { Testimonials } from "../components/Testimonials/Testimonials";
 
 export const Home = () => {
   return (
@@ -187,6 +188,7 @@ export const Home = () => {
       </section>
       <About />
       <Services />
+      <Testimonials />
     </>
   );
 };
