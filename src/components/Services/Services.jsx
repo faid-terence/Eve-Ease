@@ -87,7 +87,7 @@ export const Services = () => {
               </div>{" "}
               <div className="flex flex-col items-stretch w-[33%] ml-5 max-md:w-full max-md:ml-0">
                 <div className="flex grow flex-col justify-center items-stretch max-md:mt-10">
-                  <div className="bg-green-600 flex flex-col pl-7 pr-20 pt-6 pb-12 rounded-3xl items-start max-md:px-5">
+                  <div className="bg-primaryColor flex flex-col pl-7 pr-20 pt-6 pb-12 rounded-3xl items-start max-md:px-5">
                     <img
                       loading="lazy"
                       src="https://cdn.builder.io/api/v1/image/assets/TEMP/41ba3e6b810823bc41c90795a915cfd111ecef58e700ef764f2fa4c6726345f0?"
