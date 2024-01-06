@@ -3,6 +3,10 @@ import paymentMethods from "../../assets/mtn4.png";
 import { Link } from "react-router-dom";
 import supportImage from "../../assets/support.jpg";
 import perfomanceImage from "../../assets/Perfomance.jpg";
+import supportImageII from "../../assets/customer.jpg";
+import paymentMethodsII from "../../assets/pay.png";
+import perfomanceImageII from "../../assets/dance.svg";
+
 export const About = () => {
   return (
     <>
@@ -10,7 +14,7 @@ export const About = () => {
         <div className="container">
           <div className="flex justify-between gap-[50px] lg:gap-[130px] xl:gap-0 flex-col lg:flex-row">
             <div className="relative w-3/4 lg:w-1/2 xl:w-[770px] z-10 order-2 lg:order-1">
-              <img src={paymentMethods} alt="" width={550} />
+              <img src={paymentMethodsII} alt="" width={550} />
             </div>
             <div className="w-full lg:w-1/2 xl:w-[670px] order-1 lg:order-2">
               <h2 className="heading">Easy Payment Methods for Every one</h2>
@@ -48,7 +52,7 @@ export const About = () => {
               </Link>
             </div>
             <div className="relative z-10 xl:w-[770px] flex justify-end mt-[50px] lg:mt-0">
-              <img src={supportImage} alt="" />
+              <img src={supportImageII} alt="" />
             </div>
           </div>
         </div>
@@ -57,7 +61,7 @@ export const About = () => {
         <div className="container">
           <div className="flex justify-between gap-[50px] lg:gap-[130px] xl:gap-0 flex-col lg:flex-row">
             <div className="relative w-3/4 lg:w-1/2 xl:w-[770px] z-10 order-2 lg:order-1">
-              <img src={perfomanceImage} alt="" width={550} />
+              <img src={perfomanceImageII} alt="" width={500} />
             </div>
             <div className="w-full lg:w-1/2 xl:w-[670px] order-1 lg:order-2">
               <h2 className="heading">Access To World-Class Performances</h2>
@@ -67,12 +71,12 @@ export const About = () => {
                 concerts, theatre productions, and shows taking place across the
                 globe. Immerse yourself in a world of entertainment like never
                 before, where every event becomes an opportunity to create
-                unforgettable memories. Explore the diverse cultural tapestry of
+                {/* unforgettable memories. Explore the diverse cultural tapestry of
                 performances and experiences brought to you by our platform,
                 making each moment a celebration of global entertainment. Join
                 us in unlocking the doors to unparalleled events that cater to
                 every taste and preference, elevating your entertainment journey
-                to new heights.
+                to new heights. */}
               </p>
               <Link to="/">
                 <button className="btn">Try it out </button>
