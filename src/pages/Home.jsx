@@ -11,6 +11,7 @@ import paymentMethods from "../assets/mtn1.png";
 import { About } from "../components/About/About";
 import { Services } from "../components/Services/Services";
 import { Testimonials } from "../components/Testimonials/Testimonials";
+import { SubScribe } from "../components/Subscribe/SubScribe";
 
 export const Home = () => {
   return (
@@ -189,6 +190,7 @@ export const Home = () => {
       <About />
       <Services />
       <Testimonials />
+      <SubScribe />
     </>
   );
 };
