@@ -4,7 +4,7 @@ export const SubScribe = () => {
   return (
     <section>
       <div className=" container flex flex-col justify-center items-stretch">
-        <div className="bg-green-600 flex w-full flex-col justify-center items-center px-16 py-11 max-md:max-w-full max-md:px-5">
+        <div className="bg-primaryColor flex w-full flex-col justify-center items-center px-16 py-11 max-md:max-w-full max-md:px-5">
           <div className="flex w-[848px] max-w-full flex-col items-stretch mb-10">
             <div className="text-white text-4xl font-bold self-center max-md:max-w-full">
               Join Our Global Family Today!
