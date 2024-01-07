@@ -1,5 +1,7 @@
-import signUpImg from "../assets/images/signup.gif";
-import avartar from "../assets/images/doctor-img01.png";
+// import signUpImg from "../assets/signup.gif";
+import signUpImg from "../assets/lsignup.gif";
+import avartar from "../assets/terence 1.png";
+import signUpImgII from '../assets/Signup-svg-2.svg'
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -35,7 +37,7 @@ export const SignUp = () => {
 
           <div className="hidden lg:block bg-primaryColor rounded-l-lg">
             <figure className="rounded-l-lg">
-              <img src={signUpImg} alt="" className="w-full rounded-l-lg" />
+              <img src={signUpImgII} alt="" className="w-full rounded-l-lg" />
             </figure>
           </div>
 
