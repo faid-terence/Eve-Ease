@@ -1,7 +1,7 @@
 // import signUpImg from "../assets/signup.gif";
 import signUpImg from "../assets/lsignup.gif";
 import avartar from "../assets/terence 1.png";
-import signUpImgII from '../assets/Signup-svg-2.svg'
+import signUpImgII from "../assets/Signup-svg-2.svg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -48,7 +48,7 @@ export const SignUp = () => {
               Create an <span className="text-primaryColor"> account </span>
             </h3>
 
-            <form action="" onSubmit={submitHandler}> 
+            <form action="" onSubmit={submitHandler}>
               <div className="mb-5">
                 <input
                   type="text"
@@ -56,7 +56,7 @@ export const SignUp = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className="w-full pr-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none placeholder:text-textColor cursor-pointer"
+                  className="w-full pr-4 py-3 border-b border-solid border-[#CCF4B3] focus:outline-none placeholder:text-textColor cursor-pointer"
                   required
                 />
               </div>
@@ -67,7 +67,7 @@ export const SignUp = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full pr-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none placeholder:text-textColor cursor-pointer"
+                  className="w-full pr-4 py-3 border-b border-solid border-[#CCF4B3] focus:outline-none placeholder:text-textColor cursor-pointer"
                   required
                 />
               </div>
@@ -77,14 +77,14 @@ export const SignUp = () => {
                   placeholder="Create a strong Password"
                   name="password"
                   value={formData.password}
-                  className="w-full pr-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none placeholder:text-textColor cursor-pointer"
+                  className="w-full pr-4 py-3 border-b border-solid border-[#CCF4B3] focus:outline-none placeholder:text-textColor cursor-pointer"
                   required
                 />
               </div>
 
               <div className="mb-5 flex items-center justify-between">
                 <label className="text-headingColor font-bold text-[16px] leading-7">
-                  Are you a :
+                 Country : 
                   <select
                     name="role"
                     value={formData.role}
@@ -113,7 +113,7 @@ export const SignUp = () => {
               </div>
 
               <div className="mb-5 flex items-center gap-3">
-                <figure className="w-[60px] h-[60px] rounded-full border-2 border-solid border-primaryColor flex items-center justify-center">
+                <figure className="w-[60px] h-[60px] rounded-full border-2 border-solid bg-[#CCF4B3] flex items-center justify-center">
                   <img src={avartar} alt="" className="w-full rounded-full" />
                 </figure>
 
@@ -129,7 +129,7 @@ export const SignUp = () => {
                   />
                   <label
                     htmlFor="customFile"
-                    className="absolute top-0 left-0 w-full flex items-center px-[0.75rem] py-[0.75rem] text-[15px] leading-6 overflow-hidden bg-[#0066ff46] text-headingColor font-semibold rounded-lg truncate cursor-pointer"
+                    className="absolute top-0 left-0 w-full flex items-center px-[0.75rem] py-[0.75rem] text-[15px] leading-6 overflow-hidden bg-[#CCF4B3] text-headingColor font-semibold rounded-lg truncate cursor-pointer"
                   >
                     Upload Profile
                   </label>
