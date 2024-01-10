@@ -40,7 +40,7 @@ export const SignUp = () => {
       <div className="max-w-[1170px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           {/* img box */}
-          <div className="hidden lg:block bg-primaryColor rounded-l-lg">
+          <div className="hidden lg:block bg-primaryColor rounded-l-lg h-[680px]">
             <figure className="rounded-l-lg">
               {/* Use your signUpImgII or any other image */}
               <img src={signUpImgII} alt="" className="w-full rounded-l-lg" />
@@ -80,21 +80,18 @@ export const SignUp = () => {
 
               {/* Updated country input */}
               <div className="mb-5">
-                <label className="text-headingColor font-bold text-[16px] leading-7">
-                  Country:
-                  <Flags
-                    selected={formData.country}
-                    options={countries}
-                    onSelect={(countryCode) =>
-                      handleInputChange({
-                        target: { name: "country", value: countryCode },
-                      })
-                    }
-                    className="flag-select"
-                    name="country" // This should match the name attribute in handleInputChange
-                  />
-                </label>
-              </div>
+  <label className="text-headingColor font-bold text-[16px] leading-7">
+    Country:
+    <Flags
+      selected={formData.country}
+      options={countries}
+      onSelect={(countryCode) => handleInputChange({ target: { name: 'country', value: countryCode } })}
+      className="flag-select"
+      name="country" // This should match the name attribute in handleInputChange
+    />
+  </label>
+</div>
+
 
               {/* New phone number input */}
               <div className="mb-5">
@@ -110,15 +107,16 @@ export const SignUp = () => {
               </div>
 
               <div className="mb-5">
-                <input
-                  type="password"
-                  placeholder="Create a strong Password"
-                  name="password"
-                  value={formData.password}
-                  className="w-full pr-4 py-3 border-b border-solid border-[#CCF4B3] focus:outline-none placeholder:text-textColor cursor-pointer"
-                  required
-                />
-              </div>
+            <input
+              type="password"
+              placeholder="Enter your password"
+              name="password"
+              value={formData.password}
+              onChange={handleInputChange}
+              className="w-full  py-3 border-b border-solid border-[#0066ff61] focus:outline-none placeholder:text-textColor cursor-pointer"
+              required
+            />
+          </div>
 
               {/* ... Other form fields ... */}
               <div className="mb-5 flex items-center gap-3">
