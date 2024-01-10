@@ -7,7 +7,6 @@ import signUpImgII from "../assets/Signup-svg-2.svg";
 import Flags from "react-flags-select";
 // import 'react-flags-select/css/react-flags-select.css';
 
-
 export const SignUp = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [previewUrl, setPreviewUrl] = useState("");
@@ -86,8 +85,13 @@ export const SignUp = () => {
                   <Flags
                     selected={formData.country}
                     options={countries}
-                    onSelect={handleInputChange}
+                    onSelect={(countryCode) =>
+                      handleInputChange({
+                        target: { name: "country", value: countryCode },
+                      })
+                    }
                     className="flag-select"
+                    name="country" // This should match the name attribute in handleInputChange
                   />
                 </label>
               </div>
