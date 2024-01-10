@@ -4,6 +4,9 @@ import countries from "../Data/countries";
 import signUpImg from "../assets/lsignup.gif";
 import avartar from "../assets/terence 1.png";
 import signUpImgII from "../assets/Signup-svg-2.svg";
+import Flags from "react-flags-select";
+// import 'react-flags-select/css/react-flags-select.css';
+
 
 export const SignUp = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -79,26 +82,19 @@ export const SignUp = () => {
               {/* Updated country input */}
               <div className="mb-5">
                 <label className="text-headingColor font-bold text-[16px] leading-7">
-                  Country :
-                  <select
-                    name="country"
-                    value={formData.country}
-                    onChange={handleInputChange}
-                    className="text-textColor font-semibold text-[15px] leading-7 px-4 py-3 focus:outline-none"
-                  >
-                    {/* Display all countries in Africa */}
-                    {countries.africa.map((country) => (
-                      <option key={country} value={country}>
-                        {country}
-                      </option>
-                    ))}
-                  </select>
+                  Country:
+                  <Flags
+                    selected={formData.country}
+                    options={countries}
+                    onSelect={handleInputChange}
+                    className="flag-select"
+                  />
                 </label>
               </div>
 
               {/* New phone number input */}
               <div className="mb-5">
-                <input  
+                <input
                   type="tel"
                   placeholder="Phone Number"
                   name="phoneNumber"
