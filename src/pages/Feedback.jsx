@@ -19,7 +19,7 @@ export const Feedback = () => {
             </figure>
             <div>
               <h5 className="text-[16px] leading-6 text-primaryColor font-bold">
-                Emmy Mukiza
+                Faid Terence JABO
               </h5>
               <p className="text-[14px] leading-6 text-textColor">
                 {formateDate("02-14-2023")}
@@ -31,7 +31,7 @@ export const Feedback = () => {
           </div>
           <div className="flex gap-1">
             {[...Array(5).keys()].map((_, index) => (
-              <AiFillStar key={index} color="#0067FF" />
+              <AiFillStar key={index} color="#008000" />
             ))}
           </div>
         </div>
