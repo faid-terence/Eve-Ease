@@ -53,7 +53,7 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* <section>
+      <section>
         <div className="container">
           <div className="lg:w-[470px] mx-auto">
             <h2 className="heading text-center">
@@ -139,9 +139,9 @@ export const Home = () => {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
-      <section>
+      {/* <section>
         <div className="flex flex-col justify-center items-stretch">
           <div className="bg-neutral-800 flex w-full flex-col justify-center items-center px-16 py-11 max-md:max-w-full max-md:px-5">
             <div className="flex w-full max-w-[1305px] flex-col items-stretch mb-10 max-md:max-w-full">
@@ -186,7 +186,7 @@ export const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <About />
       <Services />
       <Testimonials />
