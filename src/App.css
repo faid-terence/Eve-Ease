@@ -74,6 +74,50 @@ body {
   color: #333;
 }
 
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  resize: vertical; /* Allow vertical resizing of the textarea */
+}
+
+.button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Customize the checkbox style */
+[type="checkbox"] {
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border: 2px solid #4caf50;
+  border-radius: 4px;
+  outline: none;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+[type="checkbox"]:checked {
+  background-color: #4caf50;
+  border: 2px solid #4caf50;
+}
 @media only screen and (max-width: 768px) {
   .navigation {
     width: 100%;
