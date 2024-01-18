@@ -6,8 +6,10 @@
   box-sizing: border-box;
 }
 
-body {
+body,
+html {
   font-family: "Manrope", sans-serif;
+  overflow-x: hidden;
 }
 .sticky_header {
   width: 100%;
@@ -73,7 +75,6 @@ body {
 .pagination-info {
   color: #333;
 }
-
 
 .input-field {
   width: 100%;
