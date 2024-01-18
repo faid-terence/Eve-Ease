@@ -12,12 +12,12 @@ import { About } from "../components/About/About";
 import { Services } from "../components/Services/Services";
 import { Testimonials } from "../components/Testimonials/Testimonials";
 import { SubScribe } from "../components/Subscribe/SubScribe";
-import { HeroSLider } from "../components/Hero/HeroSLider";
+import { HeroSlider } from "../components/Hero/HeroSLider";
 
 export const Home = () => {
   return (
     <>
-      <HeroSLider />
+      <HeroSlider />
       <section className="hero_section pt-[60px] 2xl:h-[800px]">
         <div className="container">
           <div className="flex flex-col lg:flex-row gap-[90px] items-center justify-between">
