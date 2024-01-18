@@ -22,31 +22,35 @@ const navLinks = [
     display: "Contact Us",
   },
 ];
+
 export const Header = () => {
   const headerRef = useRef(null);
   const menuRef = useRef(null);
 
   const handleStickyHeader = () => {
-    window.addEventListener("scroll", () => {
-      if (
-        document.body.scrollTop > 80 ||
-        document.documentElement.scrollTop > 80
-      ) {
-        headerRef.current.classList.add("sticky-header");
-      } else {
-        headerRef.current.classList.remove("sticky_header");
-      }
-    });
-  };
-  useEffect(() => {
-    handleStickyHeader();
+    const scrollPosition =
+      document.body.scrollTop || document.documentElement.scrollTop;
 
-    return () => window.removeEventListener("scroll", handleStickyHeader);
-  });
+    if (scrollPosition > 80) {
+      headerRef.current.classList.add("sticky-header");
+    } else {
+      headerRef.current.classList.remove("sticky-header");
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleStickyHeader);
+
+    return () => {
+      window.removeEventListener("scroll", handleStickyHeader);
+    };
+  }, []); // Empty dependency array to ensure the effect runs only once on mount
+
   const toggleMenu = () => menuRef.current.classList.toggle("show_menu");
+
   return (
     <>
-      <div className="bg-[#EFEFEF] flex items-center justify-center h-10">
+      <div className="header-text">
         <h4>Your Ultimate Solution For Online Tickets</h4>
       </div>
       <header className="header flex items-center" ref={headerRef}>
