@@ -25,6 +25,9 @@
     @apply bg-transparent bg-no-repeat bg-center bg-cover w-full h-[100px] leading-[100px];
     transition: background-color 0.5s ease; /* Smooth transition for background color change */
   }
+  .nav {
+    @apply bg-primaryColor bg-no-repeat bg-center bg-cover w-full h-[100px] leading-[100px];
+  }
   .hero_section {
     @apply bg-[url('./assets/images/hero-bg.png')] bg-no-repeat bg-center bg-cover;
   }

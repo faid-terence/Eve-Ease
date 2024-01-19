@@ -42,7 +42,7 @@ html {
   top: 0;
   left: 0;
   z-index: 99999;
-  background: #339657;
+  background-color: #339657;
   box-shadow: 3px 3px -8px 3px #ddd;
 }
 
