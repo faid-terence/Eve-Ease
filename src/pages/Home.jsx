@@ -18,7 +18,7 @@ export const Home = () => {
   return (
     <>
       <HeroSlider />
-      <section className="hero_section pt-[60px] 2xl:h-[800px]">
+      {/* <section className="hero_section pt-[60px] 2xl:h-[800px]">
         <div className="container">
           <div className="flex flex-col lg:flex-row gap-[90px] items-center justify-between">
             <div>
@@ -47,13 +47,11 @@ export const Home = () => {
                 <img src={eventImage} alt="" className="" />
               </div>
               <div className="mt-[30px]">
-                {/* <img src={eventImage2} alt="" className="w-full mb-[30px]" /> */}
-                {/* <img src={eventImage3} alt="" className="w-full" /> */}
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section>
         <div className="container">
