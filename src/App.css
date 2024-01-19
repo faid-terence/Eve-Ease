@@ -26,9 +26,10 @@ html {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000; /* Set the z-index value as needed */
-  background-color: transparent; /* Initially set to transparent */
-  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+  z-index: 1000; 
+  background-color: transparent; 
+  transition: background-color 0.3s ease;
+  color: #ccc;
   display: flex;
   align-items: center;
   justify-content: center;

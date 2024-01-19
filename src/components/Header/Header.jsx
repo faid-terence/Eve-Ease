@@ -27,14 +27,17 @@ export const Header = () => {
   const headerRef = useRef(null);
   const menuRef = useRef(null);
   const [isSticky, setIsSticky] = useState(false);
+  const [bgColor, setBgColor] = useState("");
 
   const handleStickyHeader = () => {
     const scrollPosition = window.scrollY;
 
-    if (scrollPosition > 80) {
+    if (scrollPosition > 60) {
       setIsSticky(true);
+      setBgColor("#339657");
     } else {
       setIsSticky(false);
+      setBgColor("");
     }
   };
 
@@ -57,6 +60,7 @@ export const Header = () => {
         className={`header flex items-center ${
           isSticky ? "sticky-header" : ""
         }`}
+        style={{ backgroundColor: bgColor }}
         ref={headerRef}
       >
         <div className="container">
