@@ -8,6 +8,7 @@ import { SignUp } from "../pages/SignUp";
 import { Login } from "../pages/Login";
 import { EventDetails } from "../pages/EventDetails";
 import { CreateEventForm } from "../components/CreateEventForm";
+import CreateEventPage from "../pages/CreateEventPage";
 
 export const Router = () => {
   return (
@@ -20,7 +21,7 @@ export const Router = () => {
       <Route path="/contact" element={<Contact />} />
       <Route path="/auth/signin" element={<Login />} />
       <Route path="/auth/register" element={<SignUp />} />
-      <Route path="/create-event" element={<CreateEventForm />} />
+      <Route path="/create-event" element={<CreateEventPage />} />
     </Routes>
   );
 };
