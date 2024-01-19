@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { BiMenu } from "react-icons/bi";
-import logo from "../../assets/logo.png";
 import userImage from "../../assets/terence 1.png";
 
 const navLinks = [
@@ -23,42 +22,34 @@ const navLinks = [
   },
 ];
 
-export const Header = () => {
+export const Navbar = () => {
   const headerRef = useRef(null);
   const menuRef = useRef(null);
-  const [isSticky, setIsSticky] = useState(false);
 
   const handleStickyHeader = () => {
-    const scrollPosition = window.scrollY;
-
-    if (scrollPosition > 80) {
-      setIsSticky(true);
-    } else {
-      setIsSticky(false);
-    }
+    window.addEventListener("scroll", () => {
+      if (
+        document.body.scrollTop > 80 ||
+        document.documentElement.scrollTop > 80
+      ) {
+        headerRef.current.classList.add("sticky-header");
+      } else {
+        headerRef.current.classList.remove("sticky_header");
+      }
+    });
   };
-
   useEffect(() => {
-    window.addEventListener("scroll", handleStickyHeader);
+    handleStickyHeader();
 
-    return () => {
-      window.removeEventListener("scroll", handleStickyHeader);
-    };
-  }, []);
-
+    return () => window.removeEventListener("scroll", handleStickyHeader);
+  });
   const toggleMenu = () => menuRef.current.classList.toggle("show_menu");
-
   return (
     <>
-      <div className="header-text">
+      <div className="bg-[#EFEFEF] flex items-center justify-center h-10">
         <h4>Your Ultimate Solution For Online Tickets</h4>
       </div>
-      <header
-        className={`header flex items-center ${
-          isSticky ? "sticky-header" : ""
-        }`}
-        ref={headerRef}
-      >
+      <header className="nav flex items-center" ref={headerRef}>
         <div className="container">
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-center mt-2">
