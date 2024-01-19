@@ -4,9 +4,12 @@ import Slider from "react-slick";
 import { AiFillAndroid, AiFillApple } from "react-icons/ai";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import image1 from "../../assets/images/dance3.jpg";
+import image4 from "../../assets/images/dance3.jpg";
 import image2 from "../../assets/images/dance5.jpg";
 import image3 from "../../assets/images/dance6.jpg";
+import image1 from "../../assets/images/basket3.jpg";
+import image5 from "../../assets/images/praise.jpg";
+import image6 from "../../assets/images/perform.jpg";
 
 export const HeroSlider = () => {
   const settings = {
@@ -32,6 +35,21 @@ export const HeroSlider = () => {
     },
     {
       image: image3,
+      title: "Download the App",
+      description: "Get our app now for a seamless ticketing experience.",
+    },
+    {
+      image: image4,
+      title: "Sell and Buy Tickets",
+      description: "Discover the best events. Sell and buy tickets seamlessly.",
+    },
+    {
+      image: image5,
+      title: "Easy Ticketing Process",
+      description: "Effortless ticketing process for all your favorite events.",
+    },
+    {
+      image: image6,
       title: "Download the App",
       description: "Get our app now for a seamless ticketing experience.",
     },
