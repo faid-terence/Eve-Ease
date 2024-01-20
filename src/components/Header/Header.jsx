@@ -15,7 +15,7 @@ const navLinks = [
   },
   {
     path: "/tickets",
-    display: "Tickets",
+    display: "My Tickets",
   },
   {
     path: "/contact",
