@@ -9,7 +9,7 @@ import image2 from "../../assets/images/dance5.jpg";
 import image3 from "../../assets/images/dance6.jpg";
 import image1 from "../../assets/images/basket3.jpg";
 import image5 from "../../assets/images/praise.jpg";
-import image6 from "../../assets/images/perform.jpg";
+import image6 from "../../assets/images/simba.jpg";
 
 export const HeroSlider = () => {
   const settings = {
@@ -48,11 +48,11 @@ export const HeroSlider = () => {
       title: "Easy Ticketing Process",
       description: "Effortless ticketing process for all your favorite events.",
     },
-    {
-      image: image6,
-      title: "Download the App",
-      description: "Get our app now for a seamless ticketing experience.",
-    },
+    // {
+    //   image: image6,
+    //   title: "Download the App",
+    //   description: "Get our app now for a seamless ticketing experience.",
+    // },
   ];
 
   return (
@@ -61,7 +61,7 @@ export const HeroSlider = () => {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className="h-screen flex items-center justify-center"
+            className="h-[700px] flex items-center justify-center"
           >
             <div
               style={{
