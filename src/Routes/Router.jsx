@@ -9,6 +9,7 @@ import { Login } from "../pages/Login";
 import { EventDetails } from "../pages/EventDetails";
 import { CreateEventForm } from "../components/CreateEventForm";
 import CreateEventPage from "../pages/CreateEventPage";
+import MyTicketsPage from "../components/Tickets/MyTickets";
 
 export const Router = () => {
   return (
@@ -17,11 +18,11 @@ export const Router = () => {
       <Route path="/home" element={<Home />} />
       <Route path="/events" element={<Event />} />
       <Route path="/events/:id" element={<EventDetails />} />
-      <Route path="/tickets" element={<Tickets />} />
+      <Route path="/tickets" element={<MyTicketsPage />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/auth/signin" element={<Login />} />
       <Route path="/auth/register" element={<SignUp />} />
-      <Route path="/create-event" element={<CreateEventPage />} />
+      <Route path="/create-event" element={<CreateEventForm />} />
     </Routes>
   );
 };
