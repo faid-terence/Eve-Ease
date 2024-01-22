@@ -1,33 +1,38 @@
-// Aside.js
-
 import React from "react";
-import { Link } from "react-router-dom"; // If you're using React Router
+import { Link } from "react-router-dom";
+import { FaHome, FaCreditCard, FaTicketAlt, FaUser } from 'react-icons/fa';
 
 const Aside = () => {
   return (
     <aside className="bg-primaryColor text-white w-1/4 min-h-screen">
       <div className="p-10">
-        <h2 className="text-2xl font-bold mb-4">TickNet</h2>
+        <h2 className="text-4xl font-bold mb-4 px-[60px]">TickNet</h2>
+        <span className="px-2">Your Ultimate solution for Event Management</span>
         <ul>
-          <li className="mb-[100px] mt-[100px]">
-            <Link to="/" className="block py-2 px-4 hover:bg-gray-700">
-              Home
-            </Link>
-          </li>
-          <li className="mb-8">
-            <Link to="/dashboard" className="block py-2 px-4 hover:bg-gray-700">
+          <li className="mt-[200px]">
+            <Link to="/" className="block py-2 px-4">
+              <FaHome className="mr-2" />
               Dashboard
             </Link>
           </li>
-          <li className="mb-8">
-            <Link
-              to="/my-tickets"
-              className="block py-2 px-4 hover:bg-gray-700"
-            >
-              My Tickets
+          <li className="mt-[40px]">
+            <Link to="/dashboard" className="block py-2 px-4">
+              <FaCreditCard className="mr-2" />
+              My Payments
             </Link>
           </li>
-          {/* Add more sidebar items as needed */}
+          <li className="mt-[40px]">
+            <Link to="/my-tickets" className="block py-2 px-4">
+              <FaTicketAlt className="mr-2" />
+              My Events
+            </Link>
+          </li>
+          <li className="mt-[40px]">
+            <Link to="/my-profile" className="block py-2 px-4">
+              <FaUser className="mr-2" />
+              My Profile
+            </Link>
+          </li>
         </ul>
       </div>
     </aside>
