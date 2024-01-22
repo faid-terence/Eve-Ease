@@ -2,23 +2,23 @@ import React from "react";
 import Aside from "../components/Dashboard/Aside";
 import EventTable from "../components/Dashboard/Event/EventsTable";
 import { MyEvents } from "../components/Dashboard/Event/MyEvents";
+import DashboardHeader from "../components/Dashboard/DashboardHeader";
+import profile from "../assets/terence 1.png";
 
-const eventsData = [
-  { id: 1, name: "Concert", date: "2024-02-15", location: "City Hall" },
-  {
-    id: 2,
-    name: "Conference",
-    date: "2024-03-10",
-    location: "Conference Center",
-  },
-];
+const user = {
+  name: "John Doe",
+  image: profile,
+};
 
 export const Dashboard = () => {
   return (
-    <div className="flex">
-      <Aside />
-      <div className="flex-1">
-       <MyEvents/>
+    <div className="flex flex-col h-screen">
+      <DashboardHeader user={user} />
+      <div className="flex flex-1">
+        <Aside />
+        <div className="flex-1">
+          <MyEvents />
+        </div>
       </div>
     </div>
   );
