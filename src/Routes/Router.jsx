@@ -10,6 +10,7 @@ import { EventDetails } from "../pages/EventDetails";
 import { CreateEventForm } from "../components/CreateEventForm";
 import CreateEventPage from "../pages/CreateEventPage";
 import MyTicketsPage from "../components/Tickets/MyTickets";
+import {Dashboard}  from "../pages/Dashboard";
 
 export const Router = () => {
   return (
@@ -23,6 +24,7 @@ export const Router = () => {
       <Route path="/auth/signin" element={<Login />} />
       <Route path="/auth/register" element={<SignUp />} />
       <Route path="/create-event" element={<CreateEventForm />} />
+      <Route path="/dashboard" element={<Dashboard />} />
     </Routes>
   );
 };

@@ -11,9 +11,12 @@ export const Layout = () => {
   const isHeaderVisible =
     location.pathname === "/" || location.pathname === "/home";
 
+  // Exclude header and navbar on /dashboard route
+  const excludeHeaderAndNavbar = location.pathname === "/dashboard";
+
   return (
     <>
-      {isHeaderVisible ? <Header /> : <Navbar />}
+      {!excludeHeaderAndNavbar && (isHeaderVisible ? <Header /> : <Navbar />)}
 
       <main>
         <Router />
