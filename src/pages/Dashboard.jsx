@@ -1,6 +1,7 @@
 import React from "react";
 import Aside from "../components/Dashboard/Aside";
 import EventTable from "../components/Dashboard/Event/EventsTable";
+import { MyEvents } from "../components/Dashboard/Event/MyEvents";
 
 const eventsData = [
   { id: 1, name: "Concert", date: "2024-02-15", location: "City Hall" },
@@ -17,7 +18,7 @@ export const Dashboard = () => {
     <div className="flex">
       <Aside />
       <div className="flex-1">
-        <EventTable events={eventsData} />
+       <MyEvents/>
       </div>
     </div>
   );
