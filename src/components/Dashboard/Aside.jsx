@@ -2,29 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaHome, FaCreditCard, FaTicketAlt, FaUser } from "react-icons/fa";
 
-const dashboardLinks = [
-  {
-    path: "/dashboard",
-    display: "Dashboard",
-    icon: FaHome,
-  },
-  {
-    path: "/mypayments",
-    display: "My Payments",
-    icon: FaCreditCard,
-  },
-  {
-    path: "/myevents",
-    display: "My Events",
-    icon: FaTicketAlt,
-  },
-  {
-    path: "/myprofile",
-    display: "My Profile",
-    icon: FaUser,
-  },
-];
-
 const Aside = () => {
   return (
     <aside className="bg-primaryColor text-white w-1/4 min-h-screen">
@@ -34,17 +11,30 @@ const Aside = () => {
           Your Ultimate solution for Event Management
         </span>
         <ul>
-          {dashboardLinks.map((link) => (
-            <li
-              key={link.path}
-              className={`mt-[${link.path === "/dashboard" ? 200 : 40}px]`}
-            >
-              <Link to={link.path} className="block py-2 px-4">
-                <link.icon className="mr-2" />
-                {link.display}
-              </Link>
-            </li>
-          ))}
+          <li className="mt-[200px]">
+            <Link to="/" className="block py-2 px-4">
+              <FaHome className="mr-2" />
+              Dashboard
+            </Link>
+          </li>
+          <li className="mt-[40px]">
+            <Link to="/dashboard" className="block py-2 px-4">
+              <FaCreditCard className="mr-2" />
+              My Payments
+            </Link>
+          </li>
+          <li className="mt-[40px]">
+            <Link to="/my-tickets" className="block py-2 px-4">
+              <FaTicketAlt className="mr-2" />
+              My Events
+            </Link>
+          </li>
+          <li className="mt-[40px]">
+            <Link to="/my-profile" className="block py-2 px-4">
+              <FaUser className="mr-2" />
+              My Profile
+            </Link>
+          </li>
         </ul>
       </div>
     </aside>
