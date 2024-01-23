@@ -12,5 +12,19 @@ const eventsData = [
 ];
 
 export const MyEvents = () => {
-  return <EventTable events={eventsData} />;
+  return (
+    <>
+      <div className="max-w-[570px] mt-[100px] mx-auto bg-[#CCF4B3] rounded-md flex items-center justify-between">
+        <input
+          type="search"
+          className="py-4 pl-4 pr-2 bg-transparent w-full focus:outline-none cursor-pointer placeholder:text-textColor"
+          placeholder="Search for an event"
+        />
+        <button className="btn mt-0 rounded-[0px] rounded-r-md  ">
+          Search
+        </button>
+      </div>
+      <EventTable events={eventsData} />;
+    </>
+  );
 };
