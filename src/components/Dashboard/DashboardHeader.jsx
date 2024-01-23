@@ -10,7 +10,7 @@ const DashboardHeader = ({ user }) => {
           {" "}
           <FaBell className="text-xl cursor-pointer" color="black" />
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center cursor-pointer">
           {user && user.image ? (
             <img
               src={user.image}
@@ -21,7 +21,7 @@ const DashboardHeader = ({ user }) => {
             <img
               src={defaultUserImage}
               alt="Default User Profile"
-              className="w-8 h-8 rounded-full mr-2"
+              className="w-8 h-8 rounded-full mr-2 "
             />
           )}
         </div>
