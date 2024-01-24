@@ -70,7 +70,7 @@ Securely log in to your TickNet account to access personalized features and mana
 New to TickNet? Create an account by signing up and become part of our vibrant community.
 
 
-Developed by **Faid Terence JABO**
+Developed by **Faid Terence JABO* 2024*
 
 ### Technologies used
 
