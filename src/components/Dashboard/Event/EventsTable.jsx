@@ -1,12 +1,14 @@
 import React from "react";
 import { FaEye, FaEdit, FaTrash } from "react-icons/fa";
 
-const EventTable = ({ events }) => {
+const EventTable = ({ events, openModal }) => {
   return (
     <div className="overflow-x-auto px-10 mt-[150px]">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-2xl font-bold">Event List</h2>
-        <button className="btn">Add New Event</button>
+        <button onClick={openModal} className="btn">
+          Add New Event
+        </button>
       </div>
       <table className="min-w-full bg-white border border-gray-300 shadow-md rounded-md">
         <thead>

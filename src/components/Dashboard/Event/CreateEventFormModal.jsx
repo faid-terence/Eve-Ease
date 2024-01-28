@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { FaTimes } from "react-icons/fa"; // Import the close icon
 
-export const EventForm = () => {
+const CreateEventFormModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     eventName: "",
     eventDate: "",
@@ -14,24 +15,30 @@ export const EventForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission, you can add your logic here
     console.log(formData);
-    // Reset form fields
     setFormData({
       eventName: "",
       eventDate: "",
       eventLocation: "",
       eventDescription: "",
     });
+    onClose();
   };
+
+  if (!isOpen) return null;
+
   return (
-    <section>
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
-        <div className="max-w-md w-full bg-white rounded-lg shadow-md p-8">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-8 text-center">
-            Create Event
-          </h2>
-          <form onSubmit={handleSubmit} className="space-y-4">
+    <div className="fixed z-10 inset-0 overflow-y-auto flex items-center justify-center">
+      <div className="absolute inset-0 bg-gray-500 opacity-50"></div>
+      <div className="bg-white w-full max-w-md p-6 rounded-lg overflow-hidden shadow-md relative">
+        <div className="absolute top-0 right-0 m-4">
+          <button onClick={onClose}>
+            <FaTimes className="text-gray-500 hover:text-gray-600 cursor-pointer" />
+          </button>
+        </div>
+        <div>
+          <h3 className="text-lg font-medium text-gray-900">Create Event</h3>
+          <form onSubmit={handleSubmit} className="mt-4 space-y-4">
             <div>
               <label
                 htmlFor="eventName"
@@ -107,8 +114,8 @@ export const EventForm = () => {
           </form>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default EventForm;
+export default CreateEventFormModal;

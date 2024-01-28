@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import EventTable from "./EventsTable";
+import CreateEventFormModal from "./CreateEventFormModal";
 
 const eventsData = [
   { id: 1, name: "Concert", date: "2024-02-15", location: "City Hall" },
@@ -12,6 +13,15 @@ const eventsData = [
 ];
 
 export const MyEvents = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <>
       <div className="max-w-[570px] mt-[100px] mx-auto bg-[#CCF4B3] rounded-md flex items-center justify-between">
@@ -25,6 +35,7 @@ export const MyEvents = () => {
         </button>
       </div>
       <EventTable events={eventsData} />;
+      <CreateEventFormModal isOpen={openModal} onClose={closeModal} />
     </>
   );
 };
