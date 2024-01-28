@@ -33,7 +33,7 @@ const CreateEventFormModal = ({ isOpen, onClose }) => {
       <div className="bg-white w-full max-w-md p-6 rounded-lg overflow-hidden shadow-md relative">
         <div className="absolute top-0 right-0 m-4">
           <button onClick={onClose}>
-            <FaTimes className="text-gray-500 hover:text-gray-600 cursor-pointer" />
+            <FaTimes className="cursor-pointer hover:bg-white" color="red" />
           </button>
         </div>
         <div>
@@ -106,7 +106,7 @@ const CreateEventFormModal = ({ isOpen, onClose }) => {
             <div className="flex justify-center">
               <button
                 type="submit"
-                className="bg-indigo-500 text-white py-2 px-6 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"
+                className="bg-[#339657] text-white py-2 px-6 rounded-md focus:outline-none"
               >
                 Create Event
               </button>

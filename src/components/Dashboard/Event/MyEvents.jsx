@@ -34,8 +34,8 @@ export const MyEvents = () => {
           Search
         </button>
       </div>
-      <EventTable events={eventsData} />;
-      <CreateEventFormModal isOpen={openModal} onClose={closeModal} />
+      <EventTable events={eventsData} openModal={openModal} />;
+      <CreateEventFormModal isOpen={isModalOpen} onClose={closeModal} />
     </>
   );
 };
