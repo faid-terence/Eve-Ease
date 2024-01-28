@@ -1,7 +1,7 @@
 import React from "react";
 import Aside from "../components/Dashboard/Aside";
 import EventTable from "../components/Dashboard/Event/EventsTable";
-import { MyEvents } from "../components/Dashboard/Event/MyEvents";
+import  {MyEvents}  from "../components/Dashboard/Event/MyEvents";
 import DashboardHeader from "../components/Dashboard/DashboardHeader";
 import profile from "../assets/terence 1.png";
 
