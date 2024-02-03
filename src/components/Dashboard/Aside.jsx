@@ -18,7 +18,7 @@ const Aside = () => {
             </Link>
           </li>
           <li className="mt-[40px]">
-            <Link to="/dashboard" className="block py-2 px-4">
+            <Link to="/payments" className="block py-2 px-4">
               <FaCreditCard className="mr-2" />
               My Payments
             </Link>
