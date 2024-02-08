@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { FaTimes } from "react-icons/fa"; // Import the close icon
+import { FaTimes } from "react-icons/fa";
 
 const CreateEventFormModal = ({ isOpen, onClose }) => {
-  const [step, setStep] = useState(1); // Track the current step of the form
+  const [step, setStep] = useState(1);
 
   const [formData, setFormData] = useState({
     eventName: "",
@@ -130,7 +130,7 @@ const CreateEventFormModal = ({ isOpen, onClose }) => {
                   htmlFor="organizerName"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Organizer Name
+                  Company Name
                 </label>
                 <input
                   type="text"
@@ -146,17 +146,34 @@ const CreateEventFormModal = ({ isOpen, onClose }) => {
                   htmlFor="organizerEmail"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Organizer Email
+                  Company Email
                 </label>
                 <input
-                  type="email"
-                  id="organizerEmail"
-                  name="organizerEmail"
-                  value={formData.organizerEmail}
+                  type="text"
+                  id="organizerName"
+                  name="organizerName"
+                  value={formData.organizerName}
                   onChange={handleChange}
                   className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                 />
               </div>
+              <div>
+                <label
+                  htmlFor="companyLogo"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Company Logo
+                </label>
+                <input
+                  type="file"
+                  id="companyLogo"
+                  name="companyLogo"
+                  accept="image/*"
+                  // onChange={handleLogoChange}
+                  className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                />
+              </div>
+
               <div className="flex justify-between">
                 <button
                   className="bg-gray-300 text-gray-800 py-2 px-6 rounded-md focus:outline-none"
@@ -216,7 +233,7 @@ const CreateEventFormModal = ({ isOpen, onClose }) => {
               <div className="flex justify-between">
                 <button
                   className="bg-gray-300 text-gray-800 py-2 px-6 rounded-md focus:outline-none"
-                  onClick={() => setStep(step - 1)}
+                  onClick={() => setStep(step - 2)}
                 >
                   Previous
                 </button>
