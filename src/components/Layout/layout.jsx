@@ -12,7 +12,8 @@ export const Layout = () => {
     location.pathname === "/" || location.pathname === "/home";
 
   // Exclude header and navbar on /dashboard route
-  const excludeHeaderAndNavbar = location.pathname === "/dashboard" || location.pathname === "/payments";
+  const excludeHeaderAndNavbar =
+    location.pathname === "/my-events" || location.pathname === "/payments";
 
   // Exclude footer on /dashboard route
   const excludeFooter =

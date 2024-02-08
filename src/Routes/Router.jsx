@@ -27,7 +27,7 @@ export const Router = () => {
       <Route path="/auth/signin" element={<Login />} />
       <Route path="/auth/register" element={<SignUp />} />
       <Route path="/create-event" element={<EventForm />} />
-      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/my-events" element={<Dashboard />} />
       <Route path="/payments" element={<PaymentDashboard />} />
     </Routes>
   );

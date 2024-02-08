@@ -33,7 +33,6 @@ const CreateEventFormModal = ({ isOpen, onClose }) => {
       ticketQuantity: "",
     });
 
-    // Move to the next step
     setStep(step + 1);
   };
 

@@ -24,7 +24,7 @@ const Aside = () => {
             </Link>
           </li>
           <li className="mt-[40px]">
-            <Link to="/my-tickets" className="block py-2 px-4">
+            <Link to="/my-events" className="block py-2 px-4">
               <FaTicketAlt className="mr-2" />
               My Events
             </Link>
