@@ -1,66 +1,102 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import countries from "../Data/countries";
 import signUpImg from "../assets/lsignup.gif";
 import avartar from "../assets/terence 1.png";
 import signUpImgII from "../assets/Signup-svg-2.svg";
 import Flags from "react-flags-select";
-// import 'react-flags-select/css/react-flags-select.css';
+import uploadImageToCloudinary from "../utilities/uploadCloudinary";
+import { toast } from "react-toastify";
+import { BASE_URL } from "../../config";
+import HashLoader from "react-spinners/HashLoader";
 
 export const SignUp = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [previewUrl, setPreviewUrl] = useState("");
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
-    name: "",
+    fullNames: "",
     email: "",
+    country: "",
+    phoneNumber: "",
     password: "",
-    phoneNumber: "", // Add phoneNumber field
-    photo: selectedFile,
-    gender: "",
-    country: "", // Change role to country
-    role: "patient",
+    profilePhoto: selectedFile,
   });
+
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleFileInputChange = (e) => {
-    const file = e.target.files[0];
-    console.log(file);
+  const handleFileInputChange = async (event) => {
+    try {
+      const file = event.target.files[0];
+
+      if (!file) {
+        return;
+      }
+
+      const data = await uploadImageToCloudinary(file);
+
+      setPreviewUrl(data.url);
+      setSelectedFile(file);
+      setFormData({ ...formData, profilePhoto: data.url });
+    } catch (error) {
+      console.error("Error uploading image:", error);
+    }
   };
 
   const submitHandler = async (event) => {
     event.preventDefault();
-    // Add your submission logic here
+    setLoading(true);
+    try {
+      const res = await fetch(`${BASE_URL}/auth/register`, {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      const { message } = await res.json();
+
+      if (!res.ok) {
+        throw new Error(message);
+      }
+
+      setLoading(false);
+      toast.success(message);
+      navigate("/auth/signin");
+    } catch (error) {
+      console.log(error.message);
+      toast.error(error.message);
+      setLoading(false);
+    }
   };
 
   return (
     <section className="px-5 xl:px-0">
       <div className="max-w-[1170px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2">
-          {/* img box */}
           <div className="hidden lg:block bg-primaryColor rounded-l-lg h-[680px]">
             <figure className="rounded-l-lg">
-              {/* Use your signUpImgII or any other image */}
               <img src={signUpImgII} alt="" className="w-full rounded-l-lg" />
             </figure>
           </div>
 
-          {/* Sign Up form */}
           <div className="rounded-l-lg lg:pl-16 py-10">
             <h3 className="text-headingColor text-[22px] leading-9 font-bold mb-10">
               Create an <span className="text-primaryColor"> account </span>
             </h3>
 
             <form action="" onSubmit={submitHandler}>
-              {/* ... Other form fields ... */}
               <div className="mb-5">
                 <input
                   type="text"
                   placeholder="Full Names"
-                  name="name"
-                  value={formData.name}
+                  name="fullNames"
+                  value={formData.fullNames}
                   onChange={handleInputChange}
                   className="w-full pr-4 py-3 border-b border-solid border-[#CCF4B3] focus:outline-none placeholder:text-textColor cursor-pointer"
                   required
@@ -78,22 +114,23 @@ export const SignUp = () => {
                 />
               </div>
 
-              {/* Updated country input */}
               <div className="mb-5">
-  <label className="text-headingColor font-bold text-[16px] leading-7">
-    Country:
-    <Flags
-      selected={formData.country}
-      options={countries}
-      onSelect={(countryCode) => handleInputChange({ target: { name: 'country', value: countryCode } })}
-      className="flag-select"
-      name="country" // This should match the name attribute in handleInputChange
-    />
-  </label>
-</div>
+                <label className="text-headingColor font-bold text-[16px] leading-7">
+                  Country:
+                  <Flags
+                    selected={formData.country}
+                    options={countries}
+                    onSelect={(countryCode) =>
+                      handleInputChange({
+                        target: { name: "country", value: countryCode },
+                      })
+                    }
+                    className="flag-select"
+                    name="country"
+                  />
+                </label>
+              </div>
 
-
-              {/* New phone number input */}
               <div className="mb-5">
                 <input
                   type="tel"
@@ -107,28 +144,32 @@ export const SignUp = () => {
               </div>
 
               <div className="mb-5">
-            <input
-              type="password"
-              placeholder="Enter your password"
-              name="password"
-              value={formData.password}
-              onChange={handleInputChange}
-              className="w-full  py-3 border-b border-solid border-[#0066ff61] focus:outline-none placeholder:text-textColor cursor-pointer"
-              required
-            />
-          </div>
+                <input
+                  type="password"
+                  placeholder="Create a strong Password"
+                  name="password"
+                  value={formData.password}
+                  onChange={handleInputChange}
+                  className="w-full pr-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none placeholder:text-textColor cursor-pointer"
+                  required // Ensure password field is marked as required
+                />
+              </div>
 
-              {/* ... Other form fields ... */}
               <div className="mb-5 flex items-center gap-3">
-                <figure className="w-[60px] h-[60px] rounded-full border-2 border-solid bg-[#CCF4B3] flex items-center justify-center">
-                  <img src={avartar} alt="" className="w-full rounded-full" />
-                </figure>
+                {previewUrl && (
+                  <figure className="w-[60px] h-[60px] rounded-full border-2 border-solid bg-[#CCF4B3] flex items-center justify-center">
+                    <img
+                      src={previewUrl}
+                      alt=""
+                      className="w-full rounded-full"
+                    />
+                  </figure>
+                )}
 
                 <div className="relative w-[130px] h-[50px]">
                   <input
                     type="file"
                     name="photo"
-                    value={formData.photo}
                     onChange={handleFileInputChange}
                     id="customFile"
                     accept=".jpg, .png, .jpeg"
@@ -145,10 +186,15 @@ export const SignUp = () => {
 
               <div className="mt-7">
                 <button
+                  disabled={loading && true}
                   type="submit"
                   className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3"
                 >
-                  SIGN UP!
+                  {loading ? (
+                    <HashLoader size={35} color="#ffffff" />
+                  ) : (
+                    "  SIGN UP!"
+                  )}
                 </button>
               </div>
 
