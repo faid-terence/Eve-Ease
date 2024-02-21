@@ -1,11 +1,17 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-
+import { useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { BASE_URL } from "../../config";
+import { toast } from "react-toastify";
+import { authContext } from "../context/authContext.jsx";
 export const Login = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const { dispatch } = useContext(authContext);
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -14,7 +20,7 @@ export const Login = () => {
     event.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch(`${BASE_URL}/auth/register`, {
+      const res = await fetch(`${BASE_URL}/auth/login`, {
         method: "POST",
         body: JSON.stringify(formData),
         headers: {
@@ -22,15 +28,23 @@ export const Login = () => {
         },
       });
 
-      const { message } = await res.json();
+      const result = await res.json();
 
       if (!res.ok) {
-        throw new Error(message);
+        throw new Error(result.message);
       }
 
+      dispatch({
+        type: "LOGIN_SUCCESS",
+        payload: {
+          user: result.data,
+          token: result.token,
+        },
+      });
+      console.log(result, "login data");
       setLoading(false);
-      toast.success(message);
-      navigate("/auth/signin");
+      toast.success(result.message);
+      navigate("/");
     } catch (error) {
       console.log(error.message);
       toast.error(error.message);
