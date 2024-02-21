@@ -9,6 +9,35 @@ export const Login = () => {
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  const submitHandler = async (event) => {
+    event.preventDefault();
+    setLoading(true);
+    try {
+      const res = await fetch(`${BASE_URL}/auth/register`, {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      const { message } = await res.json();
+
+      if (!res.ok) {
+        throw new Error(message);
+      }
+
+      setLoading(false);
+      toast.success(message);
+      navigate("/auth/signin");
+    } catch (error) {
+      console.log(error.message);
+      toast.error(error.message);
+      setLoading(false);
+    }
+  };
+
   return (
     <section className="px-5 lg:px-0">
       <div className="w-full max-w-[570px] mx-auto rounded-lg shadow-md md:p-10">
@@ -16,7 +45,7 @@ export const Login = () => {
           Hello ! <span className="text-primaryColor">Welcome</span> Back
         </h3>
 
-        <form action="" className="px-5 md:py-0">
+        <form action="" className="px-5 md:py-0" onSubmit={submitHandler}>
           <div className="mb-5">
             <input
               type="email"
