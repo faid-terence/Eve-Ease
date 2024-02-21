@@ -95,10 +95,12 @@ export const Header = () => {
                 <div>
                   <Link to="/">
                     <figure className="w-[35px] h-[35px] rounded-full cursor-pointer">
-                      <img src={user?.profilePhoto} alt="" />
+                      <img
+                        src={user?.profilePhoto}
+                        alt=""
+                        className="rounded-full"
+                      />
                     </figure>
-
-                    <h2 className="text-white">{user?.fullNames}</h2>
                   </Link>
                 </div>
               ) : (
