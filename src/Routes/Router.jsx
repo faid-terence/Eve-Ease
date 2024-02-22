@@ -14,6 +14,7 @@ import { Dashboard } from "../pages/Dashboard";
 import CreateEVentForm from "../components/Dashboard/Event/CreateEVentPage";
 import { EventForm } from "../components/Event/EventForm";
 import { PaymentDashboard } from "../pages/PaymentDashboard";
+import { PopUp } from "../components/POPUPS/PopUp";
 
 export const Router = () => {
   return (
@@ -29,6 +30,15 @@ export const Router = () => {
       <Route path="/create-event" element={<EventForm />} />
       <Route path="/my-events" element={<Dashboard />} />
       <Route path="/payments" element={<PaymentDashboard />} />
+      <Route
+        path="/verify-email"
+        element={
+          <PopUp
+            title="Success"
+            description="Please check your email for a verification link to complete your account setup."
+          />
+        }
+      />
     </Routes>
   );
 };

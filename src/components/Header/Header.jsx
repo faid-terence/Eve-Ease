@@ -68,7 +68,7 @@ export const Header = () => {
         <div className="container">
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-center mt-2">
-              <img src={logo} alt="Logo" className="w-43 h-[22px] rounded" />
+              {/* <img src={logo} alt="Logo" className="w-43 h-[22px] rounded" /> */}
               <h3 className="text-3xl text-white font-bold">TickNet</h3>
             </div>
 
