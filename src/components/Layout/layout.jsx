@@ -13,11 +13,15 @@ export const Layout = () => {
 
   // Exclude header and navbar on /dashboard route
   const excludeHeaderAndNavbar =
-    location.pathname === "/my-events" || location.pathname === "/payments";
+    location.pathname === "/my-events" ||
+    location.pathname === "/payments" ||
+    location.pathname === "/verify-email";
 
   // Exclude footer on /dashboard route
   const excludeFooter =
-    location.pathname === "/dashboard" || location.pathname === "/payments";
+    location.pathname === "/dashboard" ||
+    location.pathname === "/payments" ||
+    location.pathname === "/verify-email";
 
   return (
     <>

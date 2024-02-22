@@ -66,8 +66,11 @@ export const SignUp = () => {
       }
 
       setLoading(false);
-      toast.success(message);
-      navigate("/auth/signin");
+      toast.success("Registration Successful");
+
+      setTimeout(() => {
+        navigate("/verify-email");
+      }, 5000);
     } catch (error) {
       console.log(error.message);
       toast.error(error.message);

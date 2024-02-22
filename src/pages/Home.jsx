@@ -13,6 +13,7 @@ import { Services } from "../components/Services/Services";
 import { Testimonials } from "../components/Testimonials/Testimonials";
 import { SubScribe } from "../components/Subscribe/SubScribe";
 import { HeroSlider } from "../components/Hero/HeroSLider";
+import { PopUp } from "../components/POPUPS/PopUp";
 
 export const Home = () => {
   return (
