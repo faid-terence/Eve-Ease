@@ -15,6 +15,7 @@ import CreateEVentForm from "../components/Dashboard/Event/CreateEVentPage";
 import { EventForm } from "../components/Event/EventForm";
 import { PaymentDashboard } from "../pages/PaymentDashboard";
 import { PopUp } from "../components/POPUPS/PopUp";
+import { Verify } from "../components/Email/Verify";
 
 export const Router = () => {
   return (
@@ -27,7 +28,7 @@ export const Router = () => {
       <Route path="/contact" element={<Contact />} />
       <Route path="/auth/signin" element={<Login />} />
       <Route path="/auth/register" element={<SignUp />} />
-      <Route path="/create-event" element={<EventForm />} />
+      <Route path="/create-event" element={<CreateEventPage />} />
       <Route path="/my-events" element={<Dashboard />} />
       <Route path="/payments" element={<PaymentDashboard />} />
       <Route
@@ -39,6 +40,7 @@ export const Router = () => {
           />
         }
       />
+      <Route path="/email-verified" element={<Verify />} />
     </Routes>
   );
 };
