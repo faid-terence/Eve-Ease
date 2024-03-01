@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { BsArrowBarDown } from "react-icons/bs";
+import { BsArrowBarDown, BsArrowBarRight } from "react-icons/bs";
 
 const CreateEventPage = () => {
   const [eventData, setEventData] = useState({
     eventName: "",
     eventDescription: "",
-    eventDate: "",
+    eventDateTime: "",
     eventLocation: "",
     eventVenue: "",
   });
@@ -24,35 +24,11 @@ const CreateEventPage = () => {
     console.log("Event Data Submitted:", eventData);
   };
 
+  const isMediumDevice = window.innerWidth <= 768;
+
   return (
-    <div className="flex w-full max-w-5xl mx-auto my-[140px]">
-      <div className="w-1/4 p-4">
-  {/* Stepper */}
-  <div className="flex flex-col space-y-10">
-    <div className="text-lg font-semibold">
-      Step 1: Event Information
-    </div>
-    {/* Add more steps as needed */}
-
-    <div className="flex items-center text-gray-800">
-      <BsArrowBarDown className="text-2xl" />
-    </div>
-
-    <div className="text-lg font-semibold">
-      Step 2: Ticket Information
-    </div>
-
-    <div className="flex items-center text-gray-800">
-      <BsArrowBarDown className="text-2xl" />
-    </div>
-
-    <div className="text-lg font-semibold">
-      Step 3: Submission
-    </div>
-  </div>
-</div>
-
-      <div className="w-3/4 p-4">
+    <div className="flex flex-col w-full max-w-5xl mx-auto my-[100px]">
+      <div className="w-full p-4">
         <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
           <h2 className="text-3xl mb-6 font-bold text-center text-gray-800">
             Create Event
@@ -148,7 +124,7 @@ const CreateEventPage = () => {
                   />
                 </div>
               </div>
-              <div className="relative w-[430px] h-[50px]">
+              <div className="relative w-full h-12">
                 <input
                   type="file"
                   name="photo"
@@ -158,7 +134,7 @@ const CreateEventPage = () => {
                 />
                 <label
                   htmlFor="customFile"
-                  className="absolute top-0 left-0 w-full flex items-center px-[0.75rem] py-[0.75rem] text-[15px] leading-6 overflow-hidden bg-[#CCF4B3] text-headingColor font-semibold rounded-lg truncate cursor-pointer"
+                  className="absolute top-0 left-0 w-full flex items-center px-3 py-2 text-sm leading-5 text-gray-800 bg-gray-200 font-semibold rounded-md truncate cursor-pointer"
                 >
                   Add Event Image
                 </label>
@@ -173,6 +149,29 @@ const CreateEventPage = () => {
               </button>
             </div>
           </form>
+        </div>
+      </div>
+      <div className="w-full p-4">
+        <div className="flex flex-col space-y-10">
+          <div className="text-lg font-semibold">Step 1: Event Information</div>
+          <div className="flex items-center text-gray-800">
+            {isMediumDevice ? (
+              <BsArrowBarRight className="text-2xl" />
+            ) : (
+              <BsArrowBarDown className="text-2xl" />
+            )}
+          </div>
+          <div className="text-lg font-semibold">
+            Step 2: Ticket Information
+          </div>
+          <div className="flex items-center text-gray-800">
+            {isMediumDevice ? (
+              <BsArrowBarRight className="text-2xl" />
+            ) : (
+              <BsArrowBarDown className="text-2xl" />
+            )}
+          </div>
+          <div className="text-lg font-semibold">Step 3: Submission</div>
         </div>
       </div>
     </div>
