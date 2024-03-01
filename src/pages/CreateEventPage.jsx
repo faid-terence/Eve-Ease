@@ -20,7 +20,7 @@ const CreateEventPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add logic to handle event creation or submission
+
     console.log("Event Data Submitted:", eventData);
   };
 

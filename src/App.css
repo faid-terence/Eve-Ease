@@ -33,7 +33,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60px; /* Adjust the height as needed */
+  height: 60px;
 }
 .sticky-header {
   width: 100%;
