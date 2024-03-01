@@ -8,8 +8,9 @@ import Flags from "react-flags-select";
 import uploadImageToCloudinary from "../utilities/uploadCloudinary";
 import { toast } from "react-toastify";
 import { BASE_URL } from "../../config";
-import HashLoader from "react-spinners/HashLoader";
 
+import HashLoader from "react-spinners/HashLoader";
+import EastAfricanFlags from "../components/countries/EastAfrica.jsx";
 export const SignUp = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [previewUrl, setPreviewUrl] = useState("");
@@ -119,17 +120,14 @@ export const SignUp = () => {
 
               <div className="mb-5">
                 <label className="text-headingColor font-bold text-[16px] leading-7">
-                  Country:
-                  <Flags
+                  Current Location: 
+                  <EastAfricanFlags
                     selected={formData.country}
-                    options={countries}
                     onSelect={(countryCode) =>
                       handleInputChange({
                         target: { name: "country", value: countryCode },
                       })
                     }
-                    className="flag-select"
-                    name="country"
                   />
                 </label>
               </div>
