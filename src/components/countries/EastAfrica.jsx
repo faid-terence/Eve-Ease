@@ -17,7 +17,6 @@ const EastAfricanFlags = ({ selected, onSelect }) => {
       customLabels={{}}
       showSelectedLabel={true}
       className="flag-select"
-      
     />
   );
 };

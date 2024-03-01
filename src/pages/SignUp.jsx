@@ -83,9 +83,9 @@ export const SignUp = () => {
     <section className="px-5 xl:px-0">
       <div className="max-w-[1170px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2">
-          <div className="hidden lg:block bg-primaryColor rounded-l-lg h-[680px]">
-            <figure className="rounded-l-lg">
-              <img src={signUpImgII} alt="" className="w-full rounded-l-lg" />
+          <div className="hidden lg:block bg-primaryColor rounded-l-lg h-[780px]">
+            <figure className="rounded-l-lg mt-[200px] mr-[150px]">
+              <img src={signUpImgII} alt="" className="w-full rounded-l-lg " />
             </figure>
           </div>
 
@@ -96,30 +96,36 @@ export const SignUp = () => {
 
             <form action="" onSubmit={submitHandler}>
               <div className="mb-5">
-                <input
-                  type="text"
-                  placeholder="Full Names"
-                  name="fullNames"
-                  value={formData.fullNames}
-                  onChange={handleInputChange}
-                  className="w-full pr-4 py-3 border-b border-solid border-[#CCF4B3] focus:outline-none placeholder:text-textColor cursor-pointer"
-                  required
-                />
-              </div>
-              <div className="mb-5">
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  className="w-full pr-4 py-3 border-b border-solid border-[#CCF4B3] focus:outline-none placeholder:text-textColor cursor-pointer"
-                  required
-                />
+                <label className="text-headingColor font-bold text-[16px] leading-7">
+                  Full names<span className="text-red-500 ml-2">*</span>:
+                  <input
+                    type="text"
+                    // placeholder="Full Names"
+                    name="fullNames"
+                    value={formData.fullNames}
+                    onChange={handleInputChange}
+                    className="w-full pr-4 py-3 border-b border-solid border-[#CCF4B3] focus:outline-none placeholder:text-textColor cursor-pointer"
+                    required
+                  />
+                </label>
               </div>
               <div className="mb-5">
                 <label className="text-headingColor font-bold text-[16px] leading-7">
-                  Country:
+                  Email<span className="text-red-500 ml-2">*</span>:
+                  <input
+                    type="email"
+                    // placeholder="Email Address *"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full pr-4 py-3 border-b border-solid border-[#CCF4B3] focus:outline-none placeholder:text-textColor cursor-pointer"
+                    required
+                  />
+                </label>
+              </div>
+              <div className="mb-5">
+                <label className="text-headingColor font-bold text-[16px] leading-7">
+                  Current location<span className="text-red-500 ml-2">*</span>:
                   <EastAfricanFlags
                     selected={formData.country}
                     onSelect={(countryCode) =>
@@ -132,27 +138,33 @@ export const SignUp = () => {
               </div>
 
               <div className="mb-5">
-                <input
-                  type="tel"
-                  placeholder="Phone Number"
-                  name="phoneNumber"
-                  value={formData.phoneNumber}
-                  onChange={handleInputChange}
-                  className="w-full pr-4 py-3 border-b border-solid border-[#CCF4B3] focus:outline-none placeholder:text-textColor cursor-pointer"
-                  required
-                />
+                <label className="text-headingColor font-bold text-[16px] leading-7">
+                  Phone Number<span className="text-red-500 ml-2">*</span>:
+                  <input
+                    type="tel"
+                    // placeholder="Phone Number"
+                    name="phoneNumber"
+                    value={formData.phoneNumber}
+                    onChange={handleInputChange}
+                    className="w-full pr-4 py-3 border-b border-solid border-[#CCF4B3] focus:outline-none placeholder:text-textColor cursor-pointer"
+                    required
+                  />
+                </label>
               </div>
 
               <div className="mb-5">
-                <input
-                  type="password"
-                  placeholder="Create a strong Password"
-                  name="password"
-                  value={formData.password}
-                  onChange={handleInputChange}
-                  className="w-full pr-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none placeholder:text-textColor cursor-pointer"
-                  required // Ensure password field is marked as required
-                />
+                <label className="text-headingColor font-bold text-[16px] leading-7">
+                  Password<span className="text-red-500 ml-2">*</span>:
+                  <input
+                    type="password"
+                    // placeholder="Create a strong Password"
+                    name="password"
+                    value={formData.password}
+                    onChange={handleInputChange}
+                    className="w-full pr-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none placeholder:text-textColor cursor-pointer"
+                    required // Ensure password field is marked as required
+                  />
+                </label>
               </div>
 
               <div className="mb-5 flex items-center gap-3">
