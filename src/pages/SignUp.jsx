@@ -117,10 +117,9 @@ export const SignUp = () => {
                   required
                 />
               </div>
-
               <div className="mb-5">
                 <label className="text-headingColor font-bold text-[16px] leading-7">
-                  Current Location: 
+                  Country:
                   <EastAfricanFlags
                     selected={formData.country}
                     onSelect={(countryCode) =>
